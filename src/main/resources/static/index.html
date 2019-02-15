@@ -1,42 +1,46 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Guestbook</title>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="http://localhost:8080/auth/js/keycloak.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </head>
-	<body>
-		<div class="jumbotron">
-			<div class="container">
-				<h2>Gästebuch</h2>
-			</div>
-		</div>
+<head>
+    <title>Coffee orders</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-		<div class="container">
+    <!-- load the keycloak.js from keykloak server -->
+    <script src="http://keycloak:8080/auth/js/keycloak.js"></script>
+</head>
+<body>
+<div class="jumbotron">
+    <div class="container">
+        <h2>Coffee orders</h2>
+    </div>
+</div>
 
-			<div class="row">
-				<div class="col-sm-12">
-					<a href="guestbook.html" class="btn btn-success">
-						<span class="glyphicon glyphicon-list"></span>
-						Zum Gästebuch
-					</a>
-				</div>
-			</div>
-			<br />
-			<table class="table table-striped">
-				<tbody id="content"></tbody>
-			</table>
-		</div>
-		<div class="row">
-			<div class="col-sm-12">
-				<a id="logout" href="http://localhost:8080/auth/realms/springboot-example/protocol/openid-connect/logout?redirect_uri=http://localhost:8081" class="btn btn-dark">
-					<span class="glyphicon glyphicon-log-out"></span>
-					Logout
-				</a>
-			</div>
-		</div>
-	</body>
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <a href="order.html" class="btn btn-success">
+                <span class="glyphicon glyphicon-list"></span>
+                to the orders
+            </a>
+        </div>
+    </div>
+    <br />
+    <table class="table table-striped">
+        <tbody id="content"></tbody>
+    </table>
+</div>
+<div class="row">
+
+    <!-- logout from keycloak and redirect back -->
+    <div class="col-sm-12">
+        <a id="logout" href="http://keycloak:8080/auth/realms/CoffeeOrderRealm/protocol/openid-connect/logout?redirect_uri=http://localhost:8081" class="btn btn-dark">
+            <span class="glyphicon glyphicon-log-out"></span>
+            Logout
+        </a>
+    </div>
+</div>
+</body>
 </html>
